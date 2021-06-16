@@ -1,0 +1,121 @@
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\usepackage{fixmath}
+\usepackage{tikz}
+\usepackage[color=yellow]{todonotes}
+% \usepackage{enumitem}
+\usepackage{color,soul}
+\usepackage{wrapfig}
+\usepackage{placeins}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage[export]{adjustbox}
+\usetikzlibrary{bayesnet}
+\usepackage[outline]{contour}
+
+
+
+\renewcommand*\footnoterule{}
+
+\usepackage{xspace}                             % context sensitive space after macros
+\makeatletter 
+\newcommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\eg{{e.g}\onedot} \def\eg{{e.g}\onedot}
+\def\ie{{i.e}\onedot} \def\ie{{i.e}\onedot}
+\def\cf{{c.f}\onedot} \def\cf{{c.f}\onedot}
+\def\sota{state-of-the-art } 
+\def\etc{{etc}\onedot} \def\vs{{vs}\onedot} 
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\etal{{et al}\onedot}
+\def\zb{z.b\onedot} \def\zb{z.b\onedot}
+\def\dh{d.h\onedot} \def\dh{d.h\onedot}
+
+\renewcommand{\vec}[1]{\mathbold{#1}}
+\newcommand{\mat}[1]{\mathbold{#1}} 
+
+\newcommand{\X}{\mat{X}}
+\renewcommand{\x}{\vec{x}}
+\newcommand{\y}{\vec{y}}
+\newcommand{\f}{\vec{f}}
+\newcommand{\btheta}{\vec{\theta}}
+\newcommand{\bpsi}{\vec{\psi}}
+\newcommand{\bphi}{\vec{\phi}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}} 
+
+\newcommand{\approptoinn}[2]{\mathrel{\vcenter{
+  \offinterlineskip\halign{\hfil$##$\cr
+    #1\propto\cr\noalign{\kern2pt}#1\sim\cr\noalign{\kern-2pt}}}}}
+
+\newcommand{\appropto}{\mathpalette\approptoinn\relax}
+
+\newcommand<>{\uncoverubrace}[2]{%
+  \onslide#3 \underbrace{ \onslide<1->%
+  #1%
+  \onslide#3 }_{#2} \onslide<1->%
+}
+\newcommand<>{\uncoverobrace}[2]{%
+  \onslide#3 \overbrace{ \onslide<1->%
+  #1%
+  \onslide#3 }^{#2} \onslide<1->%
+}
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+
+\definecolor{goe_blue}{HTML}{003665}
+\definecolor{light_blue}{HTML}{BDCEE3}
+\definecolor{cs_orange}{HTML}{E58143}
+\definecolor{grey_2}{HTML}{575556}
+\definecolor{grey_1}{HTML}{3C3B39}
+\definecolor{grey_3}{HTML}{878787}
+\definecolor{grey_4}{HTML}{DADADA}
+
+
+\setbeamercolor{alerted text}{fg=goe_blue}
+\setbeamercolor{normal text}{fg=grey_2, bg=white}
+\setbeamercolor{example text}{fg=cs_orange}
+
+\newcommand{\light}[1]{\textcolor{gray}{#1}}
+
+\usepackage{textpos} 
+\newcommand{\slidewidth}{\paperwidth-28px}  % there seems to be a 28px offset in paperwidth to real slide size
+
+\addtobeamertemplate{frametitle}{}{%
+       \begin{textblock*}{\slidewidth}(\slidewidth-74.9px-7px,-21px) % above, below and to the side 7px (=50% margin)
+        \includegraphics[width=74.9px, height=14px]{assets/logo_white}
+    \end{textblock*}
+    }
+
+\titlegraphic{
+       \begin{textblock*}{\slidewidth}(\slidewidth-74.9px-7px,-13px) % above, below and to the side 7px (=50% margin)
+        \includegraphics[width=74.9px, height=14px]{assets/logo_print}
+    \end{textblock*}
+}
+
+\usepackage{fontspec}
+\setmainfont{Calibri}
