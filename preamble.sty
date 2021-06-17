@@ -24,30 +24,35 @@
 \usepackage{forest}
 \usepackage{pifont}
 \usepackage{amssymb}
+
 \usepackage[export]{adjustbox}
 \usetikzlibrary{bayesnet}
 \usepackage[outline]{contour}
 
-
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={3.0},
+]{doclicense}
 
 \renewcommand*\footnoterule{}
 
 \usepackage{xspace}                             % context sensitive space after macros
-\makeatletter 
+\makeatletter
 \newcommand\onedot{\futurelet\@let@token\@onedot}
 \def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
 \def\eg{{e.g}\onedot} \def\eg{{e.g}\onedot}
 \def\ie{{i.e}\onedot} \def\ie{{i.e}\onedot}
 \def\cf{{c.f}\onedot} \def\cf{{c.f}\onedot}
-\def\sota{state-of-the-art } 
-\def\etc{{etc}\onedot} \def\vs{{vs}\onedot} 
+\def\sota{state-of-the-art }
+\def\etc{{etc}\onedot} \def\vs{{vs}\onedot}
 \def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
 \def\etal{{et al}\onedot}
 \def\zb{z.b\onedot} \def\zb{z.b\onedot}
 \def\dh{d.h\onedot} \def\dh{d.h\onedot}
 
 \renewcommand{\vec}[1]{\mathbold{#1}}
-\newcommand{\mat}[1]{\mathbold{#1}} 
+\newcommand{\mat}[1]{\mathbold{#1}}
 
 \newcommand{\X}{\mat{X}}
 \renewcommand{\x}{\vec{x}}
@@ -59,7 +64,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\N}{\mathcal{N}}
-\newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}} 
+\newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 
 \newcommand{\approptoinn}[2]{\mathrel{\vcenter{
   \offinterlineskip\halign{\hfil$##$\cr
@@ -86,15 +91,24 @@
   \endgroup
 }
 
-
+% primary colors
 \definecolor{goe_blue}{HTML}{003665}
 \definecolor{light_blue}{HTML}{BDCEE3}
+
+% secondary colors
+\definecolor{sec_dark_blue}{HTML}{006597}
+\definecolor{sec_mid_blue}{HTML}{0093c7}
+\definecolor{sec_sky_blue}{HTML}{84bfea}
+\definecolor{sec_chamois}{HTML}{e9e1d7}
+
+
 \definecolor{cs_orange}{HTML}{E58143}
 \definecolor{grey_2}{HTML}{575556}
 \definecolor{grey_1}{HTML}{3C3B39}
 \definecolor{grey_3}{HTML}{878787}
 \definecolor{grey_4}{HTML}{DADADA}
 
+\setbeamercolor{frametitle}{bg=goe_blue}
 
 \setbeamercolor{alerted text}{fg=goe_blue}
 \setbeamercolor{normal text}{fg=grey_2, bg=white}
@@ -102,8 +116,13 @@
 
 \newcommand{\light}[1]{\textcolor{gray}{#1}}
 
-\usepackage{textpos} 
+\usepackage{textpos}
 \newcommand{\slidewidth}{\paperwidth-28px}  % there seems to be a 28px offset in paperwidth to real slide size
+
+\setbeamertemplate{footline}[text line]{%
+  \parbox{\linewidth}{\vspace*{-2em}\inserttitle\hfill\insertsubtitle\hfill\textcopyright\insertshortauthor\hfill License\hspace{1ex}\doclicenseNameRef\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+
 
 \addtobeamertemplate{frametitle}{}{%
        \begin{textblock*}{\slidewidth}(\slidewidth-74.9px-7px,-21px) % above, below and to the side 7px (=50% margin)
